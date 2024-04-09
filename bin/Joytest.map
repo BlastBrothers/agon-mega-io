@@ -1,0 +1,181 @@
+Section     Base   Top    High   Length
+----------- ------ ------ ------ -------
+.libs       040045 040045             0h
+.init       040045 04006B            26h
+.fini       04006B 0400F3            88h
+.init.args  0400F3 0400F3             0h
+.init.bss   0400F3 0400FF             Ch
+.text       0400FF 043FC8          3EC9h
+.data       043FC8 044103           13Bh
+.rodata     044103 044331           22Eh
+.init_array 000000 000000             0h
+.ctors      000000 000000             0h
+.dtors      000000 000000             0h
+.fini_array 000000 000000             0h
+.bss        080000 080037 09FFFF     37h
+.header     040000 040045            45h
+
+Label                                 Value
+-----------------------------------   ------
+___low_bss                          = 080000
+___len_bss                          = 000037
+___heaptop                          = 09FFFF
+___heapbot                          = 080037
+___init_array_count                 = 000000
+___ctors_count                      = 000000
+___dtors_count                      = 000000
+___fini_array_count                 = 000000
+__stack                             = 0AFFFF
+__fcmp                              = 0400FF
+__setflag                           = 04011C
+__bshru                             = 04012B
+__frameset                          = 040135
+__frameset0                         = 040143
+__iand                              = 04014E
+__imulu                             = 040167
+__indcallhl                         = 040197
+__ineg                              = 040198
+__ior                               = 0401A1
+__ishl                              = 0401BA
+__ishru                             = 0401E0
+__ixor                              = 040221
+__ladd                              = 04023A
+__land                              = 040240
+__lcmps                             = 04025B
+__lcmpu                             = 040268
+__lcmpzero                          = 040270
+__lladd                             = 040278
+__lland                             = 04029C
+__llcmpu                            = 0402D9
+__llcmpzero                         = 040303
+__llctlz                            = 040318
+__lldivs                            = 040330
+__lldivu                            = 040380
+__lldvrmu                           = 040394
+__lldvrmu.hijack                    = 04039B
+__llmulu                            = 0403F2
+__llneg                             = 040447
+__llshl                             = 040460
+__llshrs.hijack_llshru              = 04048E
+__llshrs.finish                     = 0404AD
+__llshru                            = 0404B1
+__llsub                             = 0404CB
+__lshrs.hijack_lshru                = 0404F9
+__lshru                             = 040508
+__agdev_default_mi_handler          = 040518
+__agdev_uart0_handler               = 04051C
+__agdev_UART0_serial_RX             = 040524
+__agdev_vdp_protocol_data           = 040529
+__agdev_vdp_protocol                = 04052E
+_vdp_vdu_init                       = 0405C3
+_vdp_cursor_tab                     = 0405CC
+_vdp_set_text_colour                = 0405F6
+_vdp_logical_scr_dims               = 040619
+_vdp_cursor_enable                  = 04063E
+_sys_vars                           = 080000
+_vdu_cursor_tab                     = 043FC8
+_vdu_set_text_colour                = 043FCB
+_vdu_set_logical_scr_dims           = 043FCD
+_vdu_cursor_enable                  = 043FD1
+_vdp_key_init                       = 040663
+_check_bytes_get_int                = 04071E
+_check_bytes                        = 040750
+_vdp_key_reset_interrupt            = 040775
+_vdp_set_key_event_handler          = 040794
+_vdp_update_key_state               = 0407A2
+_vdp_key_bits                       = 080003
+_uart0_orig_handler                 = 080023
+_fp1                                = 043FD4
+_fp2                                = 043FDB
+_fp3                                = 043FDE
+_fp4                                = 043FE0
+_vdp_ctrl_ptr                       = 080026
+_vdp_key_event_ptr                  = 080029
+_event_handler                      = 08002C
+__stdio_init                        = 04081B
+_stdin                              = 043FE9
+_stdout                             = 043FEE
+_stderr                             = 043FF3
+_fputc                              = 04086D
+_fput_char                          = 0408FD
+_free                               = 040924
+_malloc                             = 0409E1
+__alloc_base                        = 08002F
+_npf_vpprintf                       = 040A80
+JTI0_0                              = 044103
+JTI0_1                              = 044121
+JTI0_2                              = 044166
+JTI0_3                              = 044187
+JTI0_4                              = 04419F
+JTI0_5                              = 0441B7
+_npf_utoa_rev                       = 0421EA
+_printf                             = 0422B2
+_vprintf                            = 0422D1
+_npf_putc_std                       = 0422F1
+_.str                               = 0441CF
+_.str.1                             = 0441D3
+_.str.2                             = 0441D7
+_outchar                            = 042301
+_putchar                            = 042308
+_sbrk                               = 042337
+__sbrkbase                          = 043FF8
+_strlen                             = 042355
+_putch                              = 04236A
+_waitvblank                         = 0423A4
+_mos_puts                           = 042382
+_mos_sysvars                        = 0425A4
+_mos_fputc                          = 04260D
+_mos_setintvector                   = 04269A
+__start                             = 040045
+_exit                               = 04006D
+skip._abort                         = 0400A5
+_exit.sp                            = 0400A6
+_clear_bss                          = 0400F3
+_atexit                             = 0427E2
+exit_functions                      = 043FFB
+__Z19init_button_displayv           = 04280E
+__ZN13BUTTON_VISUAL7displayEv       = 042951
+__ZN13BUTTON_VISUAL12redraw_colorEh = 042B56
+__Z20update_mouse_displayhaha       = 042C91
+__Z23init_detect_controllersv       = 042D54
+__Z16read_controllersv              = 0434FA
+_main                               = 043830
+__Z17key_event_handler9KEY_EVENT    = 043B77
+__Z12binary_printPKcj               = 043BAE
+__Z12binary_printPKca               = 043D94
+__Z12binary_printPKch               = 043EAE
+__ZL14button_visuals                = 043FFE
+_.str                               = 0441DB
+_.str.1                             = 0441DF
+_.str.2                             = 0441E3
+_.str.3                             = 0441E7
+_.str.4                             = 0441EB
+_.str.5                             = 0441F0
+_.str.6                             = 0441F5
+_.str.7                             = 0441FB
+_.str.8                             = 0441FF
+_.str.9                             = 044204
+_.str.10                            = 044208
+_.str.11                            = 04420C
+_.str.12                            = 044210
+_.str.13                            = 044215
+_.str.14                            = 04421A
+_.str.15                            = 04421B
+_pad1_type                          = 080035
+_pad2_type                          = 080036
+_.str.16                            = 044222
+_.str.1.17                          = 044242
+__ZL9pad_names                      = 044263
+_.str.2.18                          = 04426F
+_.str.3.19                          = 0442B2
+_.str.4.20                          = 0442D3
+_.str.5.21                          = 0442E1
+_.str.6.22                          = 0442EE
+_.str.7.23                          = 0442FB
+_.str.16.31                         = 044308
+_.str.17                            = 044311
+_.str.18                            = 04431E
+_.str.19                            = 044322
+_.str.23                            = 044326
+_.str.24                            = 044329
+_.str.25                            = 04432C
