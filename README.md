@@ -94,6 +94,11 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 
 ### Notes
 
+- The controller test appears to reveal some odd behaviors in the current firmware and the Agon emulator:
+  - Mouse scroll wheel values reset to 0 only when moving the mouse. Feels like they should either never reset, or reset once the click ends... anyone know how PS/2 mice are supposed to work? Do I need to read the mouse sysvars differently?
+  - The emulator lets you press all D-pad directions at once by making a circle motion, at least on Windows. Does not affect analog sticks.
+  - The emulator does not recognize scroll wheel up or down.
+  
 - The controller test program is built using the [AgDev](https://github.com/pcawte/AgDev) toolchain. 
   
   - Currently the code expects a weird in-dev version of AgDev where mouse support has been added to sysvars, but cursor tabbing still uses (y,x) coordinates. I will update my code to match the next stable release of AgDev when it comes out.
