@@ -44,7 +44,7 @@ My adapter rectifies this by providing a new set of controller ports that send 5
 
 ### Wiring
 
-The controllers connect to **male** 9-pin D-SUB connectors. Some vendors order the pins on their connectors differently. These instructions assume pins on the male connector are ordered like this:
+The controllers connect to **male** DB9 connectors. Some vendors order the pins on their connectors differently. These instructions assume pins on the male connector are ordered like this:
 
 ```
 1 2 3 4 5
@@ -59,7 +59,7 @@ Pins on the GPIO port are ordered top to bottom, then right to left; the top-rig
 
 PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins are only 3.3V. Therefore, **all signals must go through a level shifter.** I use four separate 4-channel bidirectional level shifters to accomplish this, as there are 14 lines that need to be shifted, and that was the cheapest option. Make sure that all of the physical ports are on the 5V side, and all wires going to the GPIO port are on the 3.3V side. Also make sure all the level shifters are wired to ground and *both* voltages as per their instructions.
 
-| **Input pin (5V)** | **GPIO pin/* (3.3V)** | **eZ80 Port** | **ESP32 port** | **Function**  |
+| **Input pin (5V)** | **GPIO pin\* (3.3V)** | **eZ80 Port** | **ESP32 port** | **Function**  |
 | ------------------ | -------------------- | --------- | ---------- | ------------- |
 | P1 pin 1           | Pin 18               | C, bit 1  |            | P1 Up/Z       |
 | P1 pin 2           | Pin 20               | C, bit 3  |            | P1 Down/Y     |
@@ -84,9 +84,33 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 | Mouse VCC          | Pin 2                |           |            | +5V           |
 | Mouse GND          | Pin 3**              |           |            | GND           |
 
-*For the AL2. The original Agon Light and the Agon Origins use a different pin arrangement.
+*For the AL2. The original Agon Light, the Console8, and the Agon Origins use a different pin arrangement, but all of the same pins are present.
 
 **Pins 5 and 33 can also be used as ground.
+
+
+
+
+
+### Parts list
+I bought all my parts on Amazon. I just went for the cheapest option for each component, and since prices change so much, I advise you to look up the parts yourself.
+- 1x breadboard. A 400 point one is big enough, but cramped with wires. But if you make it any larger, you can't stick it on top of your Agon's case like I did.
+- A bunch of wires. The exact amount depends on what other components you buy, but I needed roughly 20 male-to-male DuPont cables, 20 male-to-female DuPont cables, and a bunch of precut jumper wires to route voltage and ground to all the level shifters.
+- 4x 4-channel 3.3V to 5V logic level converters. These are nothing but a few transistors and resistors placed on a tiny circuit board. You can get 8-channel ones, but it's cheaper to buy more of the smaller ones.
+- 2x **Male** DB9 breakout adapters. I didn't have any luck finding ones I could plug directly into the breadboard, so these just kind of flop around behind it. If you find ones that plug in, get a bigger breadboard so you actually have somewhere to put them. Make sure they actually have 9 screw-in points - some only have three.
+- 1x PS/2 mouse breakout adapter. Mine had four pins sticking out the back, which I could bend down and shove directly into the breadboard.
+
+
+
+
+### Assembly instructions
+Please reference the table in the Wiring section for exact pin numbers.
+1. Wire one of the positive rails to the 5V GPIO pin, and the other to the 3.3V pin. Wire both negative rails to ground.
+2. Place all the level shifters in a line, bridging the two halves of the breadboard. Make sure they're all facing the right way - they have a designated high-voltage and low-voltage side. I recommend putting all of the level shifters right next to each other, so you have room on the other end of the board to plug the PS/2 connector in.
+3. Wire up all the level shifters. Usually, both sides have to be connected to ground, and each side will have a pin for the associated voltage (make sure 5V goes to the high-voltage side, and 3.3V to the low-volaage side). These pins are usually labeled "HV", "LV", and "GND". 
+5. Connect a bunch of male-male cables to all of the pins of both DB9 adapters.
+6. Wire up the 5V side of the board. The only rules are that 5V goes to the 5V rail, ground goes to ground, and both controllers' SELECT lines need to be wired in parallel to the same level shifter channel (since they're going to the same GPIO pin). Outside of that, you can allocate each controller pin (and the mouse's CLK and DAT pins) to level shifter channels however you wish, but it's best to keep the order somewhat sensible. (My order is UDLR12 for P1, then SELECT, then UDLR12 for P2, then mouse CLK and DAT on the end.) You should be using 15 of the 16 channels when you're done.
+7. Wire up the 3.3V side of the board, by connecting the other end of all the level shifter channels to the appropriate GPIO pin.
 
 
 
@@ -110,3 +134,13 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 - **any Atari-compatible sticks that use active circuitry should not be used with this adapter.** Most sticks are passive, and so won't have this problem, but if a controller actually *needs* to draw power from pin 7, it won't be able to, since that's the SELECT line now. Worst case is that the controller will also be unable to handle 5V sent in on pin 5, and it'll get fried!
 
 - Controller data is stored in a 24-bit integer. Because of the way the Console8 allocated controller pins to GPIO ports, both controllers' buttons are interleaved. The order is UUDDLLRRCCBBSSAAZZYYXXMM. Player 2's inputs use the lesser bit.
+
+
+
+
+
+### Special thanks and references
+This repo contains a few utility functions (put16, put24, get_port, set_port) written by [HeathenUK](https://github.com/HeathenUK) and posted in the [Agon & Console8 Discord](https://discord.gg/GYq43gsz). 
+[Richard Turnnige's Agon Bits examples](https://github.com/richardturnnidge/lessons) - the mouse and joystick examples helped me test the hardware before I wrote my own test app.
+[Plutiedev - Genesis controllers](https://plutiedev.com/controllers)
+[Polling the 6-button](https://web.archive.org/web/20130707235706/http://www.cs.cmu.edu/~chuck/infopg/segasix.txt)
