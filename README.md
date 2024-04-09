@@ -145,3 +145,4 @@ Please reference the table in the Wiring section for exact pin numbers.
 - [Wilbur McCalmont's 6-button timing notes](https://forums.atariage.com/topic/110392-sega-genesis-6-button-controller-waveforms/)
 - [Plutiedev - Genesis controllers](https://plutiedev.com/controllers)
 - [Polling the 6-button](https://web.archive.org/web/20130707235706/http://www.cs.cmu.edu/~chuck/infopg/segasix.txt)
+- [Atari Interface - Deskthority Wiki](https://deskthority.net/wiki/Atari_interface#Pin-out)
