@@ -142,5 +142,6 @@ Please reference the table in the Wiring section for exact pin numbers.
 ### Special thanks and references
 This repo contains a few utility functions (put16, put24, get_port, set_port) written by [HeathenUK](https://github.com/HeathenUK) and posted in the [Agon & Console8 Discord](https://discord.gg/GYq43gsz). 
 [Richard Turnnige's Agon Bits examples](https://github.com/richardturnnidge/lessons) - the mouse and joystick examples helped me test the hardware before I wrote my own test app.
+[Wilbur McCalmont's 6-button timing notes](https://forums.atariage.com/topic/110392-sega-genesis-6-button-controller-waveforms/)
 [Plutiedev - Genesis controllers](https://plutiedev.com/controllers)
 [Polling the 6-button](https://web.archive.org/web/20130707235706/http://www.cs.cmu.edu/~chuck/infopg/segasix.txt)
