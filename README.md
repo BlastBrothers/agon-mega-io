@@ -1,5 +1,7 @@
 # Agon Light 2 - Mega I/O Adapter
 
+![breadboard version of the schematic](image.png) ![Joytest screenshot](image2.png)
+
 Enables simultaneous support for a mouse and two game controllers. Supports Sega's 2-button, 3-button, and 6-button standards, but is still compatible with all software written for the Console8's 2-button controllers. 
 
 This repo also contains a controller detection/testing program. I will release just the controller reading code by itself at some point. In the meantime, feel free to copy code from this repo (as long as you obey the license).
