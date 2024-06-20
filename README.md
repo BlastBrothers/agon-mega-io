@@ -65,7 +65,7 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 | P1 pin 2           | Pin 20               | C, bit 3  |            | P1 Down/Y     |
 | P1 pin 3           | Pin 22               | C, bit 5  |            | P1 Left/X     |
 | P1 pin 4           | Pin 24               | C, bit 7  |            | P1 Right/Mode |
-| P1 pin 5           | Pin 2                |           |            | +5V           |
+| P1 pin 5           | Pin 4                |           |            | +5V           |
 | P1 pin 6           | Pin 14               | D, bit 5  |            | P1 A/B        |
 | P1 pin 7           | Pin 26               | B, bit 5  |            | SELECT        |
 | P1 pin 8           | Pin 3**              |           |            | GND           |
@@ -74,7 +74,7 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 | P2 pin 2           | Pin 19               | C, bit 2  |            | P2 Down/Y     |
 | P2 pin 3           | Pin 21               | C, bit 4  |            | P2 Left/X     |
 | P2 pin 4           | Pin 23               | C, bit 6  |            | P2 Right/Mode |
-| P2 pin 5           | Pin 2                |           |            | +5V           |
+| P2 pin 5           | Pin 4                |           |            | +5V           |
 | P2 pin 6           | Pin 13               | D, bit 4  |            | P2 A/B        |
 | P2 pin 7           | Pin 26               | B, bit 5  |            | SELECT        |
 | P2 pin 8           | Pin 3**              |           |            | GND           |
@@ -84,7 +84,7 @@ PS/2 mice and Genesis controllers both operate on 5V, but the Agon's GPIO pins a
 | Mouse VCC          | Pin 2                |           |            | +5V           |
 | Mouse GND          | Pin 3**              |           |            | GND           |
 
-*For the AL2. The original Agon Light, the Console8, and the Agon Origins use a different pin arrangement, but all of the same pins are present.
+*For the AL2 and Agon Origins. The original Agon Light lacks 5V, and the Console8 uses a completely different pin arrangement.
 
 **Pins 5 and 33 can also be used as ground.
 
