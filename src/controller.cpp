@@ -63,7 +63,7 @@ void init_detect_controllers() {
             pad1_type = CONTROLLER_3_BUTTON;
         } else {
             //unfortunately there is no way to autodetect if a controller is 2-button, or just not connected
-            vdp_cursor_tab(4, 2);
+            vdp_cursor_tab(2, 4);
             printf("Press a button on Controller 1.");
 
             //Did we press a button on pad 1? No need to check against different runs if we expect a 2-button
@@ -74,7 +74,7 @@ void init_detect_controllers() {
         waitvblank();
     }
 
-    vdp_cursor_tab(5, 3);
+    vdp_cursor_tab(3, 5);
     printf("%s detected on port 1 (type %d).", pad_names[pad1_type], pad1_type);
 
     for (uint8_t i = 60; i > 0; i--) {
@@ -101,7 +101,7 @@ void init_detect_controllers() {
             pad2_type = CONTROLLER_3_BUTTON;
         } else {
             //unfortunately there is no way to autodetect if a controller is 2-button, or just not connected
-            vdp_cursor_tab(7, 2);
+            vdp_cursor_tab(2, 7);
             printf("Press a button on Controller 2 if present, or Controller 1 if not.");
 
             //Did we get a press on pad 1?
@@ -114,7 +114,7 @@ void init_detect_controllers() {
         }
     }
 
-    vdp_cursor_tab(8, 3);
+    vdp_cursor_tab(3, 8);
     printf("%s detected on port 2 (type %d).", pad_names[pad2_type], pad2_type);
 
 
