@@ -125,8 +125,6 @@ Please reference the table in the Wiring section for exact pin numbers.
   
 - The controller test program is built using the [AgDev](https://github.com/pcawte/AgDev) toolchain. 
   
-  - Currently the code expects a weird in-dev version of AgDev where mouse support has been added to sysvars, but cursor tabbing still uses (y,x) coordinates. I will update my code to match the next stable release of AgDev when it comes out.
-  
   - I build using VS Code tasks instead of running make directly. I recommend installing [this extension](https://marketplace.visualstudio.com/items?itemName=SanaAjani.taskrunnercode) so it's easier to run these. Currently these build tasks expect AgDev to sit at /../../agon and the emulator to sit at /../../fab-agon-emulator, relative to the project directory.
   
   - The code is kind of a mess in general. I have plans to improve it a bit, but I'm not sure how much I'll end up doing. Feel free to raise an issue if you know of a better way to do something (or if you find a bug).

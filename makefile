@@ -3,8 +3,9 @@
 # ----------------------------
 
 NAME = Joytest
-DESCRIPTION = "Agon Light Application"
+DESCRIPTION = "Agon Mega I/O Test App"
 COMPRESSED = NO
+LDHAS_ARG_PROCESSING = 0
 
 CFLAGS = -Wall -Wextra -O2 -ferror-limit=0
 CXXFLAGS = -Wall -Wextra -O2

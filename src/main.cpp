@@ -23,6 +23,9 @@ void binary_print(char const* s, int16_t n);
 void print_ports(uint8_t portB, uint8_t portC, uint8_t portD, uint8_t x, uint8_t y);
 
 int main() {
+
+    printf("%s", "HellO?");
+
     //program start boilerplate
     sv = vdp_vdu_init();
     if (vdp_key_init() == -1)
@@ -82,15 +85,15 @@ int main() {
 
         vdp_cursor_tab(0, 0);
         binary_print("Buttons ", buttons);
-        vdp_cursor_tab(1, 0);
+        vdp_cursor_tab(0, 1);
         binary_print("Mouse wheel ", mouseWheel);
-        vdp_cursor_tab(1, 21);
+        vdp_cursor_tab(21, 1);
         binary_print("Buttons ", mouseButtons);
 
         //Lag check: sv-> time updates on a per-frame basis
         uint24_t time_end = sv->time;
 
-        vdp_cursor_tab(59, 0);
+        vdp_cursor_tab(0, 59);
         if (time_start != time_end) {
             printf("LAG");
         } else {
@@ -105,11 +108,11 @@ int main() {
 
 
 void print_ports(uint8_t portB, uint8_t portC, uint8_t portD, uint8_t x, uint8_t y) {
-    vdp_cursor_tab(y, x);
+    vdp_cursor_tab(x, y);
     binary_print("portB: ", portB);
-    vdp_cursor_tab(y + 1, x);
+    vdp_cursor_tab(x, y + 1);
     binary_print("portC: ", portC);
-    vdp_cursor_tab(y + 2, x);
+    vdp_cursor_tab(x, y + 2);
     binary_print("portD: ", portD);
 }
 
