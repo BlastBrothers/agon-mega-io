@@ -23,9 +23,6 @@ void binary_print(char const* s, int16_t n);
 void print_ports(uint8_t portB, uint8_t portC, uint8_t portD, uint8_t x, uint8_t y);
 
 int main() {
-
-    printf("%s", "HellO?");
-
     //program start boilerplate
     sv = vdp_vdu_init();
     if (vdp_key_init() == -1)
