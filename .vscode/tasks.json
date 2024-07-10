@@ -65,7 +65,7 @@
             "label": "Run Emulator",
             "type": "shell",
             "command": [
-                "${workspaceFolder}\\..\\..\\fab-agon-emulator\\fab-agon-emulator --scale 1000",
+                "${workspaceFolder}\\..\\..\\fab-agon-emulator\\fab-agon-emulator --scale integer",
             ],
             "options": {
                 "cwd": "${workspaceFolder}\\..\\..\\fab-agon-emulator"
